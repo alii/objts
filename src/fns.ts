@@ -1,4 +1,4 @@
-import type { ExpectParser, Merge, RecordExpectParser, ToString } from "./types";
+import type { ExpectParser, Merge, RecordExpectParser, ToString, KeysArray } from "./types";
 
 export function assign<Out, In extends {}, Update extends {}>(
 	_expect: ExpectParser<Out>,
@@ -15,7 +15,7 @@ export function assign<Out, In extends {}, Update extends {}>(
 export function keys<Out extends object>(
 	expect: RecordExpectParser<Out>,
 	obj: Out
-): Array<ToString<Exclude<keyof Out, symbol>>> {
+): KeysArray<Out> {
 	return Object.keys(obj).filter(
 		(key): key is ToString<Exclude<keyof Out, symbol>> => key in expect.shape
 	);

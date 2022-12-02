@@ -10,3 +10,5 @@ export type RecordExpectParser<T> = ExpectParser<T> & {
 
 export type Merge<In, Update> = Omit<In, keyof Update> & Update;
 export type ToString<N extends string | number> = `${N}`;
+
+export type KeysArray<Out extends object> = Array<ToString<Exclude<keyof Out, symbol>>>;
