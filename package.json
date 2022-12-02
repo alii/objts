@@ -1,0 +1,23 @@
+{
+	"name": "objts",
+	"version": "0.1.0",
+	"type": "module",
+	"exports": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"packageManager": "yarn@3.3.0",
+	"license": "Apache-2.0",
+	"scripts": {
+		"build": "tsup src/index.ts --dts --format esm",
+		"release": "yarn build && yarn npm publish"
+	},
+	"files": [
+		"dist",
+		"package.json",
+		"README.md",
+		"LICENSE"
+	],
+	"devDependencies": {
+		"tsup": "^6.5.0",
+		"typescript": "^4.9.3"
+	}
+}
