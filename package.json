@@ -1,11 +1,16 @@
 {
 	"name": "objts",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"exports": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"packageManager": "yarn@3.3.0",
 	"license": "Apache-2.0",
+	"homepage": "https://github.com/alii/objts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alii/objts.git"
+	},
 	"scripts": {
 		"build": "tsup src/index.ts --dts --format esm",
 		"release": "yarn build && yarn npm publish"
